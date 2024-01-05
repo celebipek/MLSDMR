@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>Document</title>
+ 
+</head>
+<style>
+     .btn{
+      background-color: #1bb1dc;
+      text-decoration: none;
+    }
+    .btn:hover{
+      background-color: white;
+      color: #1bb1dc;
+    }
+  .blogDetails{
+    padding: 90px;
+    
+  }
+  h1{
+    text-align: center;
+    padding: 15px;
+  }
+</style>
+<body>
+  <%- include("../main/partials/header.ejs") %>
+ 
+  <div class="blogDetails">
+    <div class="text-muted mb-2">
+      <%= article.createdAt.toLocaleDateString() %>
+      <a href="/blog" class="btn btn-secondary">Diğer yazılara git</a>
+    </div>
+    <h1 class="mb-1"><%= article.title %></h1>
+    
+
+    <div>
+      <%- article.sanitizedHtml %>
+    </div>
+  </div>
+  <%- include("../main/partials/footer.ejs") %>
+</body>
+<script src="/js/main.js"></script>
+</html>
