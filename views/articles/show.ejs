@@ -15,6 +15,9 @@
  
 </head>
 <style>
+  .blogWord {
+    overflow-wrap: break-word;
+  }
      .btn{
       background-color: #1bb1dc;
       text-decoration: none;
@@ -43,8 +46,11 @@
     <h1 class="mb-1"><%= article.title %></h1>
     
 
-    <div>
-      <%- article.sanitizedHtml %>
+    <div class="blogWord">
+      <p>
+        <%- article.sanitizedHtml %>
+
+      </p>
     </div>
   </div>
   <%- include("../main/partials/footer.ejs") %>
